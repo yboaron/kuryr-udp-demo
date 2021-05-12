@@ -13,5 +13,5 @@ sock.bind((UDP_IP, UDP_PORT))
 
 while True:
     data, addr = sock.recvfrom(1024) 
-    response = '%s: HELLO, I AM ALIVE!!!\n' % platform.node()
+    response = '%s: HELLO, I AM ALIVE!!!\nSource IP: %s' % (platform.node(), addr[0])
     sent = sock.sendto(response, addr)
